@@ -1,0 +1,156 @@
+=================================================================
+                    PROJECT PROPOSAL
+=================================================================
+
+PROJECT TITLE: Student Result Management System
+PROJECT CODE: E-01
+LANGUAGE: C Programming
+
+=================================================================
+TEAM INFORMATION
+=================================================================
+
+Team Name: VCE-25_I-II_CSEG_SP_5
+
+| S.No |   Name          | Roll Number | Role                    |
+|------|-----------------|-------------|-------------------------|
+| 1    | Thakur Kanishka | 25881A05CW  | Mentor & Code Reviewer  | 
+| 2    | Shukla Reddy    | 25881A05DZ  | Leader & Integration    |
+| 3    | Akshara Reddy   | 25881A05CD  | AI Feature Developer    |
+| 4    | Erla Krithika   | 25881A05DB  | Reports & Documentation |
+| 5    | Tarak RamaRoa   | 25881A05EH  | File I/O Developer      |
+
+=================================================================
+PROJECT DESCRIPTION
+=================================================================
+
+The Student Result Management System is a console-based application 
+developed in the C programming language. It helps educational institutions 
+store, manage, and analyse student academic performance.
+
+The system provides functionality to:
+- Add, edit, delete, and search student records
+- Calculate percentages and letter grades automatically
+- Generate rank lists based on performance
+- Compute subject-wise class averages
+- Identify at-risk students using rule-based AI
+
+=================================================================
+CORE FEATURES (9 Features)
+=================================================================
+
+|   | Feature             | Description                                     |
+|---|---------------------|-------------------------------------------------|
+| 1 | Add Student         | Enter roll number, name, marks for 5 subjects   |
+| 2 | Edit Student        | Modify existing student details                 |
+| 3 | Delete Student      | Remove student by roll number                   |
+| 4 | Search Student      | Find student by roll number                     |
+| 5 | View All Students   | Display table with roll, name, %, grade         |
+| 6 | Rank List           | Sort students by percentage (bubble sort)       |
+| 7 | Subject Averages    | Calculate class average for each subject        |
+| 8 | AI At-Risk Detector | Rule-based expert system (15% threshold)        |
+| 9 | Save & Exit         | Binary file persistence (students.dat)          |
+
+=================================================================
+SUBJECTS WITH CREDITS (Total 15 Credits)
+=================================================================
+
+| Subject                         | Credits |
+|---------------------------------|---------|
+| Matrices and Calculus           | 4       |
+| Engineering Chemistry           | 3       |
+| Programming for Problem Solving | 3       |
+| Digital Electronics             | 3       |
+| English                         | 2       |
+| TOTAL                           | 15      |
+
+=================================================================
+JNTUH GRADING SYSTEM
+=================================================================
+
+| Marks Range | Grade | Grade Points | Result |
+|-------------|-------|--------------|--------|
+| 90 - 100    | O     | 10           | Pass   |
+| 80 - 89     | A+    | 9            | Pass   |
+| 70 - 79     | A     | 8            | Pass   |
+| 60 - 69     | B+    | 7            | Pass   |
+| 50 - 59     | B     | 6            | Pass   |
+| 40 - 49     | C     | 5            | Pass   |
+| Below 40    | F     | 0            | Fail   |
+
+=================================================================
+AI FEATURE DETAILS (Rule-Based Expert System)
+=================================================================
+
+Type: Rule-Based AI (Heuristic Threshold Detection)
+
+Algorithm:
+1. Calculate the class average for each subject
+2. Set threshold = class_avg × 0.85 (15% below average)
+3. Flag students with marks < threshold
+4. Generate personalised improvement suggestions
+
+Why 15%? Represents one standard deviation in educational analytics.
+
+=================================================================
+TECHNICAL SPECIFICATIONS
+=================================================================
+
+Programming Language: C (C99 Standard)
+Data Structure: Struct Array (MAX 100 students)
+File I/O: Binary mode (fread/fwrite)
+Sorting Algorithm: Bubble Sort (O(n²))
+Search Algorithm: Linear Search (O(n))
+Compiler: GCC / MinGW
+
+=================================================================
+21-DAY TIMELINE
+=================================================================
+
+WEEK 1 (Days 1-7): Setup & Basic Structure
+- Day 1-2: Environment setup and repository creation
+- Day 3-4: Basic structure and menu design
+- Day 5-7: Core data structures and basic functions
+
+WEEK 2 (Days 8-14): Feature Development
+- Day 8-10: CRUD operations (Add, Edit, Delete, Search)
+- Day 11-12: Reports (Display, Ranking, Averages)
+- Day 13-14: AI Feature implementation
+
+WEEK 3 (Days 15-21): Testing & Documentation
+- Day 15-16: File I/O and final integration
+- Day 17-18: Testing and bug fixes
+- Day 19-20: Documentation and GitHub
+- Day 21: Final Demo and Submission
+
+=================================================================
+DELIVERABLES
+=================================================================
+
+1. Source Code (main.c)            - Complete working program
+2. Binary Data File (students.dat) - Auto-generated
+3. Project Proposal (proposal.txt) - This document
+4. Design Diagram (flowchart.png)  - System flowchart
+5. README.md                       - Compilation and execution instructions
+6. GitHub Repository               - With complete commit history
+
+=================================================================
+RISK ASSESSMENT
+=================================================================
+
+| Risk                  | Mitigation                                 |
+|-----------------------|--------------------------------------------|
+| Compiler issues       | Use standard GCC, test on multiple systems |
+| Team coordination     | Daily meetings, GitHub for version control |
+| Data corruption       | Binary file validation, backup on save     |
+| Demo technical issues | Have backup laptop ready                   |
+
+=================================================================
+MENTOR APPROVAL
+=================================================================
+
+Project Proposal submitted to: [Mr. Ganesh Deshmukh]
+
+Date: 11-05-2026
+
+=================================================================
