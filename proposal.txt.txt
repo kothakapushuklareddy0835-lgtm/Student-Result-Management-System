@@ -18,7 +18,7 @@ Team Name: VCE-25_I-II_CSEG_SP_5
 | 2    | Shukla Reddy    | 25881A05DZ  | Leader & Integration    |
 | 3    | Akshara Reddy   | 25881A05CD  | AI Feature Developer    |
 | 4    | Erla Krithika   | 25881A05DB  | Reports & Documentation |
-| 5    | Taraka RamaRoa   | 25881A05EH  | File I/O Developer      |
+| 5    | Taraka RamaRoa  | 25881A05EH  | File I/O Developer      |
 
 =================================================================
 PROJECT DESCRIPTION
