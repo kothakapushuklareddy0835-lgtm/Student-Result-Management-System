@@ -1,0 +1,34 @@
+void displaySubjectAverages() {
+    if(studentCount == 0) {
+        printf("\nNo students to calculate averages!\n");
+        return;
+    }
+    
+    float subjectAvg[SUBJECT_COUNT] = {0};
+    int passCount[SUBJECT_COUNT] = {0};
+    
+    for(int i = 0; i < studentCount; i++) {
+        for(int j = 0; j < SUBJECT_COUNT; j++) {
+            subjectAvg[j] += students[i].marks[j];
+            if(students[i].marks[j] >= 40) {
+                passCount[j]++;
+            }
+        }
+    }
+    
+    for(int j = 0; j < SUBJECT_COUNT; j++) {
+        subjectAvg[j] /= studentCount;
+    }
+    
+    printf("\n");
+    printf("+================================================+==============+============+\n");
+    printf("| SUBJECT                                        | CLASS AVG    | PASS %%     |\n");
+    printf("+================================================+==============+============+\n");
+    
+    for(int j = 0; j < SUBJECT_COUNT; j++) {
+        float passPercent = (float)passCount[j] / studentCount * 100;
+        printf("| %-44s | %12.2f | %10.1f%% |\n", 
+               subjectNames[j], subjectAvg[j], passPercent);
+    }
+    printf("+================================================+==============+============+\n");
+}
