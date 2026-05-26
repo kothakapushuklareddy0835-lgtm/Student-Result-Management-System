@@ -1,0 +1,27 @@
+void saveToFile() {
+    FILE *fp = fopen("students.dat", "wb");
+    if(fp == NULL) {
+        printf("Error: Cannot create save file!\n");
+        return;
+    }
+    
+    fwrite(&studentCount, sizeof(int), 1, fp);
+    fwrite(students, sizeof(Student), studentCount, fp);
+    
+    fclose(fp);
+    printf("[SUCCESS] Saved %d students to file.\n", studentCount);
+}
+
+void loadFromFile() {
+    FILE *fp = fopen("students.dat", "rb");
+    if(fp == NULL) {
+        printf("No existing data file found. Starting fresh.\n");
+        return;
+    }
+    
+    fread(&studentCount, sizeof(int), 1, fp);
+    fread(students, sizeof(Student), studentCount, fp);
+    
+    fclose(fp);
+    printf("[SUCCESS] Loaded %d students from file.\n", studentCount);
+}
