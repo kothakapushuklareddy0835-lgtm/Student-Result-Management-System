@@ -1,0 +1,50 @@
+float calculateSGPA(Student *student) {
+    int totalGradePoints = 0;
+    int totalCreditsEarned = 0;
+    
+    for(int i = 0; i < SUBJECT_COUNT; i++) {
+        totalGradePoints += student->subjectResults[i].gradePoints * subjectCredits[i];
+        if(student->subjectResults[i].gradePoints > 0) {
+            totalCreditsEarned += subjectCredits[i];
+        }
+    }
+    
+    if(totalCreditsEarned == 0) return 0.0;
+    return (float)totalGradePoints / totalCreditsEarned;
+}
+
+// Calculate all results for a student
+void calculateStudentResults(Student *student) {
+    int totalMarks = 0;
+    int passedSubjects = 0;
+    int failedSubjects = 0;
+    
+    for(int i = 0; i < SUBJECT_COUNT; i++) {
+        calculateSubjectGrade(&student->subjectResults[i], student->marks[i]);
+        totalMarks += student->marks[i];
+        
+        if(student->subjectResults[i].gradePoints > 0) {
+            passedSubjects++;
+        } else {
+            failedSubjects++;
+        }
+    }
+    
+    student->percentage = (float)totalMarks / SUBJECT_COUNT;
+    student->sgpa = calculateSGPA(student);
+    
+    if(failedSubjects == 0) {
+        strcpy(student->overallResult, "PASS");
+        
+        if(student->sgpa >= 9.0) strcpy(student->overallGrade, "O");
+        else if(student->sgpa >= 8.0) strcpy(student->overallGrade, "A+");
+        else if(student->sgpa >= 7.0) strcpy(student->overallGrade, "A");
+        else if(student->sgpa >= 6.0) strcpy(student->overallGrade, "B+");
+        else if(student->sgpa >= 5.0) strcpy(student->overallGrade, "B");
+        else if(student->sgpa >= 4.0) strcpy(student->overallGrade, "C");
+        else strcpy(student->overallGrade, "F");
+    } else {
+        strcpy(student->overallResult, "FAIL");
+        strcpy(student->overallGrade, "F");
+    }
+}
